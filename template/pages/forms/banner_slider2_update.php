@@ -1,3 +1,17 @@
+<?php
+      include("../connection/connection.php");
+      error_reporting(0);
+      session_start();
+      // if($_SESSION['username'] != 'admin'){
+      //   header("location:../../login.php");
+      //   die();
+      // }
+      if(isset($_POST['submit']))        
+        {
+          header("Location: ../../pages/forms/slider2.php?usuccess=1");
+           exit();
+        }             
+    ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -234,7 +248,7 @@
                       ?>
                     <form class="forms-sample" action="" method="post" enctype="multipart/form-data">
                       <div class="form-group">
-                        <label>Image upload</label><br><br>
+                        <label>Image Update</label><br><br>
                         <img src="../../uploads/banner_slider2/<?php echo $rowDate['s2_img'] ?> " style="width: 100px; height: 100px;">
                         <!-- <input type="file"  class="file-upload-default"> -->
                         <div class="input-group col-xs-12">
@@ -245,7 +259,19 @@
                           </span>
                         </div>
                       </div>
-                      
+                      <div class="form-group">
+                        <label>Mobile Image Update</label><br><br>
+                        <img src="../../uploads/banner_slider2/<?php echo $rowDate['s2_img_moblie'] ?> " style="width: 100px; height: 100px;">
+                        <!-- <input type="file"  class="file-upload-default"> -->
+                        <div class="input-group col-xs-12">
+
+                          <!-- <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image"> -->
+                          <span class="input-group-append">
+                            <a class="file-upload-browse btn btn-info" type="button" style="width:100px;" href="<?php echo 'banner_slider2_update_image_m.php?upd='.$rowDate['id'].''?>">Edit</a>
+                          </span>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-info me-2" name="submit">Submit</button>
                       <button class="btn btn-dark">Cancel</button>
                     </form>
                   </div>

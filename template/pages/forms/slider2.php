@@ -51,7 +51,7 @@
                                move_uploaded_file($moblie_temp, $moblie_store);
                                $moblie_success =  '<div class="alert alert-success alert-dismissible fade show" role="ale">
                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                News Added Successfully.
+                                <strong>Record Added Successfully.</strong>
                               </div>';
                               
                               }
@@ -104,7 +104,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
-    
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -124,11 +123,9 @@
                   <h5 class="mb-0 font-weight-normal">Admin</h5>
                   <!-- <span>Gold Member</span> -->
                 </div>
-              </div>
-              
+              </div>  
             </div>
           </li>
-          
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../index.php">
               <span class="menu-icon">
@@ -137,7 +134,6 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/forms/slider1.php">
               <span class="menu-icon">
@@ -241,8 +237,7 @@
               </span>
               <span class="menu-title">Testimonials</span>
             </a>
-          </li>
-          
+          </li> 
         </ul>
       </nav>
       <!-- partial -->
@@ -263,11 +258,8 @@
                 </form>
               </li>
             </ul>
-            <ul class="navbar-nav navbar-nav-right">
-              
-              
-              
-              <li class="nav-item dropdown">
+            <ul class="navbar-nav navbar-nav-right">  
+            <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="../../assets/images/faces/face15.png" alt="">
@@ -278,7 +270,6 @@
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                   <h6 class="p-3 mb-0">Profile</h6>
                   <div class="dropdown-divider"></div>
-                  
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item" href="../../pages/forms/logout.php">
                     <div class="preview-thumbnail">
@@ -304,8 +295,7 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> BANNER IMAGE UPLOAD  </h3>
-              
+              <h3 class="page-title"> BANNER IMAGE UPLOAD  </h3>  
             </div>
             <div class="row">
             <?php
@@ -322,31 +312,28 @@
               echo $moblie_error;
           }
 
-            if (isset($_GET['bsuccess']) && $_GET['bsuccess'] == 1) {
-              $bsuccess =  '<div class="alert alert-success alert-dismissible fade show" role="ale">
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                 Banner2 Desktop Image Updated Successfully.
-                              </div>';
-            echo $bsuccess;
-            }  
-
-              if (isset($_GET['msuccess']) && $_GET['msuccess'] == 1) {
-                $msuccess =  '<div class="alert alert-success alert-dismissible fade show" role="ale">
+            if (isset($_GET['usuccess']) && $_GET['usuccess'] == 1) {
+              $usuccess =  '<div class="alert alert-success alert-dismissible fade show" role="ale">
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                   Banner2 Mobile Image Updated Successfully.
+                                   <strong>Record Updated!</strong>.
                                 </div>';
-              // Display the success message
-              echo $msuccess;
+            echo $usuccess;
+            }  
+            if (isset($_GET['success']) && $_GET['success'] == 1) {
+                          $successMessage = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                              <strong>Records Deleted Successfully.</strong>
+                                              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                              </div>';
+                          // Display the success message
+                          echo $successMessage;
             }
-
             ?>
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title"></h4>
                     <p class="card-description"></p>
-                    <form class="forms-sample" action="" method="post" enctype="multipart/form-data">
-                      
+                    <form class="forms-sample" action="" method="post" enctype="multipart/form-data"> 
                       <div class="form-group">
                         <label>Image Upload</label>
                         <input type="file" name="image" class="file-upload-default">
@@ -367,27 +354,21 @@
                           </span>
                         </div>
                       </div>
-                      
                       <button type="submit" name="submit" class="btn btn-info me-2">Submit</button>
                       <button class="btn btn-dark">Cancel</button>
                     </form>
                   </div>
                 </div>
-              </div>
-              
-              
+              </div>  
             </div>
           </div>
           <!--form end-->
           <!-- Banner View -->
-        
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title">Banner List </h3>
-              
+              <h3 class="page-title">Banner List </h3>  
             </div>
             <div class="row">
-              <div class="col-lg-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Images</h4>
@@ -397,9 +378,8 @@
                         <thead>
                           <tr>
                             <th>id</th>
-                            <th></th>
                             <th>Image</th>
-                            
+                             <th>Mobile Image</th>
                             <th>Action</th>
                             <th></th>
                             <th></th>
@@ -418,9 +398,8 @@
                             {
                               echo"<tr>";
                                 echo"<td>".$i."</td>";
-                                echo"<td></td>";
                                 echo"<td><img src='../../uploads/banner_slider2/" . htmlspecialchars($rowDate['s2_img']) . "' style='width: 100px; height: 100px;''></td>";
-                                
+                                echo"<td><img src='../../uploads/banner_slider2/" . htmlspecialchars($rowDate['s2_img_moblie']) . "' style='width: 100px; height: 100px;''></td>";
                                 echo"<td>
                                 <a class='btn btn-info btn-flat btn-addon btn-xs m-b-10'  style='font-size:15px; padding:5px;'  href='banner_slider2_update.php?upd=".$rowDate['id']."'><i class='fa fa-edit'></i></a>
                                 <a class='btn btn-info btn-flat btn-addon btn-xs m-b-10'  style='font-size:15px; padding:5px;' href='banner_slider2_delete.php?dlt=".$rowDate['id']."'><i class='fa fa-trash'></i></a>
@@ -436,62 +415,9 @@
                       </table>
                     </div>
                   </div>
-                </div>
-               </div>
-               <div class="col-lg-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Mobile Images</h4>
-                    </p>
-                    <div class="table-responsive">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>id</th>
-                            <th></th>
-                            <th> Mobile Image</th>
-                            
-                            <th>Action</th>
-                            <th></th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php
-                        $i=1;
-                        if (!mysqli_num_rows($resultRead2) > 0) 
-                        {
-                          echo "<td> No Category Data</td>";
-                        }
-                        else
-                          {
-                          while ($rowDate2 = mysqli_fetch_array($resultRead2)) 
-                            {
-                              echo"<tr>";
-                                echo"<td>".$i."</td>";
-                                echo"<td></td>";
-                                echo"<td><img src='../../uploads/banner_slider2/" . htmlspecialchars($rowDate2['s2_img_moblie']) . "' style='width: 100px; height: 100px;''></td>";
-                                
-                                echo"<td>
-                                <a class='btn btn-info btn-flat btn-addon btn-xs m-b-10'  style='font-size:15px; padding:5px;'  href='banner_slider2_update_m.php?upd=".$rowDate2['id']."'><i class='fa fa-edit'></i></a>
-                                <a class='btn btn-info btn-flat btn-addon btn-xs m-b-10'  style='font-size:15px; padding:5px;' href='banner_slider2_delete.php?dlt=".$rowDate2['id']."'><i class='fa fa-trash'></i></a>
-                                </td>";
-                                echo"<td></td>";
-                                echo"<td></td>";
-                              echo"</tr>";
-                              $i++;
-                            }
-                          }
-                        ?>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-               </div>   
+                </div>     
             </div>
           <!--Banner View End-->
-
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">

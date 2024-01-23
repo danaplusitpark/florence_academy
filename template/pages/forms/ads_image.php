@@ -24,7 +24,6 @@
   <body>
     <?php  
         include '../connection/connection.php';
-
             error_reporting(0);
             session_start();
             // if($_SESSION['username'] != 'admin'){
@@ -32,8 +31,7 @@
             //       die();
             //    }
             if(isset($_POST['submit']))          
-                { 
-                  
+                {   
                   $fname = $_FILES['image']['name'];
                   $temp = $_FILES['image']['tmp_name'];
                   $fsize = $_FILES['image']['size'];
@@ -45,11 +43,9 @@
                   {        
                     if($fsize>=100000000)
                         {
-                          $error =  '<div class="alert alert-dark alert-dismissible fade show">          
-                                    <strong>Max Image Size is 1024kb!</strong> Try different Image.
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                    </div>';
-                    }
+                          $error =  '<div class="alert alert-dark alert-dismissible fade show"><strong>Max Image Size is 1024kb!</strong> Try different Image.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>';
+                        }
                     else
                         { 
                         $sql = "INSERT INTO ads (ads_img) VALUE('".$fnew."')";// store the submited data ino the database :images
@@ -57,35 +53,27 @@
                         mysqli_query($con, $sql); 
                         move_uploaded_file($temp, $store);
                          $success =  '<div class="alert alert-light alert-dismissible fade show" role="alert">
-                         Ads Added Successfully.
+                         <strong>Record Added Successfully.</strong>
                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                         </div>';
-                              
+                         </div>';      
                         }
                     }
                 elseif($extension == '')
                     {
-                      $error =  '<div class="alert alert-dark alert-dismissible fade show" role="alert">
-                                 <strong>Error!</strong> Something went wrong.
-                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
-                  ';
-                }
+                      $error =  '<div class="alert alert-dark alert-dismissible fade show" role="alert"><strong>Error!</strong> Something went wrong.<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>';
+                    }
                 else
                     {
                       $error =  '<div class="alert alert-dark alert-dismissible fade show">
-                                <strong>invalid extension!</strong>png, jpg, Gif are accepted.
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                              </div>';
-                }  
-          }
-            
+                      <strong>invalid extension!</strong>png, jpg, Gif are accepted.
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>';
+                    }  
+          }  
             $sqlRead = "SELECT * FROM ads order by id desc";
             $resultRead = $con->query($sqlRead);
-
         ?>  
-
-
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -106,10 +94,8 @@
                   <!-- <span>Gold Member</span> -->
                 </div>
               </div>
-              
             </div>
           </li>
-          
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../index.php">
               <span class="menu-icon">
@@ -222,8 +208,7 @@
               </span>
               <span class="menu-title">Testimonials</span>
             </a>
-          </li>
-          
+          </li> 
         </ul>
       </nav>
       <!-- partial -->
@@ -245,9 +230,6 @@
               </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">
-              
-              
-              
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
@@ -258,8 +240,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                   <h6 class="p-3 mb-0">Profile</h6>
-                  <div class="dropdown-divider"></div>
-                  
+                  <div class="dropdown-divider"></div>  
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item" href="../../pages/forms/logout.php">
                     <div class="preview-thumbnail">
@@ -285,8 +266,7 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Ads IMAGE UPLOAD  </h3>
-              
+              <h3 class="page-title"> Ads IMAGE UPLOAD  </h3> 
             </div>
             <div class="row">
               <!-- Display Error and Success Alerts -->
@@ -297,33 +277,23 @@
             if (!empty($success)) {
                 echo $success;
             }
-
             if (isset($_GET['success']) && $_GET['success'] == 1) {
-              $successMessage = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                  Ads Deleted Successfully.
-                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                  </div>';
-              // Display the success message
+              $successMessage = '<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Record Deleted Successfully.</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
               echo $successMessage;
             }  
-
-              if (isset($_GET['updsuccess']) && $_GET['updsuccess'] == 1) {
-              $successMessage = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                  Ads Updated Successfully.
-                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                  </div>';
-              // Display the success message
+            if (isset($_GET['updsuccess']) && $_GET['updsuccess'] == 1) {
+              $successMessage = '<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>Record Updated Successfully.</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>';
               echo $successMessage;
             }
-
             ?>
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title"></h4>
                     <p class="card-description"></p>
-                    <form class="forms-sample" action="" method="post" enctype="multipart/form-data">
-                      
+                    <form class="forms-sample" action="" method="post" enctype="multipart/form-data">  
                       <div class="form-group">
                         <label>Image Upload</label>
                         <input type="file" name="image" class="file-upload-default">
@@ -344,7 +314,6 @@
           </div>
           <!--form end-->
           <!-- Banner View -->
-        
           <div class="content-wrapper">
             <div class="page-header">
               <h3 class="page-title">Ads Image List </h3> 
@@ -353,7 +322,6 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Images</h4>
-                    
                     </p>
                     <div class="table-responsive">
                       <table class="table table-hover">
@@ -402,7 +370,6 @@
                 </div> 
             </div>
           <!--Banner View End-->
-
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
           <footer class="footer">

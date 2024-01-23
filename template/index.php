@@ -13,7 +13,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Florence Academy Admin</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
@@ -53,14 +53,11 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Admin</h5>
-                  
+                  <h5 class="mb-0 font-weight-normal">Admin</h5>  
                 </div>
-              </div>
-              
+              </div>  
             </div>
           </li>
-          
           <li class="nav-item menu-items">
             <a class="nav-link" href="index.php">
               <span class="menu-icon">
@@ -69,7 +66,6 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          
           <li class="nav-item menu-items">
             <a class="nav-link" href="pages/forms/slider1.php">
               <span class="menu-icon">
@@ -195,8 +191,6 @@
               </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">
-              
-              
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
@@ -236,8 +230,7 @@
             <div class="row">
               <div class="col-12 grid-margin stretch-card">
                 <div class="card corona-gradient-card">
-                  <div class="card-body py-0 px-0 px-sm-3">
-                    
+                  <div class="card-body py-0 px-0 px-sm-3">   
                   </div>
                 </div>
               </div>
@@ -268,7 +261,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <?php 
                 $sql="select * from banner_slider2";
@@ -294,7 +286,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <?php 
                 $sql="select * from blog";
@@ -320,7 +311,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <?php 
                 $sql="select * from upcoming_events";
@@ -346,7 +336,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <?php 
                 $sql="select * from social_media";
@@ -372,7 +361,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <?php 
                 $sql="select * from news_slider";
@@ -398,7 +386,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <?php 
                 $sql="select * from ads";
@@ -424,7 +411,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <?php 
                 $sql="select * from study_material";
@@ -449,16 +435,7 @@
                     <h6 class="text-muted font-weight-normal">STUDY MATERIALS</h6>
                   </div>
                 </div>
-              </div>
-
-              
-
-              
-            
-            
-            
-            
-            
+              </div>  
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->

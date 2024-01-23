@@ -58,10 +58,10 @@
                         mysqli_query($con, $sql); 
                         move_uploaded_file($temp, $store);
                        
-                              // $idFromDB = $_GET['updb']; // Assuming this is your actual id parameter
+                               $idFromDB = $_GET['upd']; // Assuming this is your actual id parameter
 
                               // Use the fetched id for redirection
-                              header("Location: ../../pages/forms/slider2.php?bsuccess=1");
+                              header("Location: ../../pages/forms/banner_slider2_update.php?upd=$idFromDB");
                               exit();
                               
                         }

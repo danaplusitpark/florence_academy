@@ -302,7 +302,7 @@
 
                         if (isset($_GET['success']) && $_GET['success'] == 1) {
                           $successMessage = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                              Ads Deleted Successfully.
+                                              Blog Deleted Successfully.
                                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                               </div>';
                           // Display the success message
